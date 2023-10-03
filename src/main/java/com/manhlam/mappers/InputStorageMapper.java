@@ -1,12 +1,11 @@
-package com.manhlam.controllers;
+package com.manhlam.mappers;
 
 import com.manhlam.dtos.InputStorageDTO;
-import com.manhlam.mappers.ProductMapper;
 import com.manhlam.models.InputStorage;
+import com.manhlam.models.Product;
 
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class InputStorageMapper {
@@ -14,6 +13,10 @@ public class InputStorageMapper {
     public static InputStorageDTO toDto(InputStorage inputStorage) {
         InputStorageDTO inputStorageDTO = new InputStorageDTO();
         inputStorageDTO.setInputId(inputStorage.getInputId());
+        Set<Integer> productIds = inputStorage.getProducts().stream()
+                .map(Product::getProductId)
+                .collect(Collectors.toSet());
+        inputStorageDTO.setProductId(productIds);
         inputStorageDTO.setQuantity(inputStorage.getQuantity());
         inputStorageDTO.setDateInput(inputStorage.getDateInput());
         inputStorageDTO.setInputPrice(inputStorage.getInputPrice());

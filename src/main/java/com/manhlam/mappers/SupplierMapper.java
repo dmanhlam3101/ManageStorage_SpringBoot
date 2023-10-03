@@ -1,4 +1,4 @@
-package com.manhlam.controllers;
+package com.manhlam.mappers;
 
 import com.manhlam.dtos.SupplierDTO;
 import com.manhlam.models.Supplier;

@@ -55,7 +55,7 @@ VALUES ('Basketball', 1, 1, 1),
        ('Soccer Ball', 1, 5, 1),
        ('Cycling Helmet', 1, 4, 1),
        ('Swimming Goggles', 1, 5, 1),
-       ('Boxing Gloves', 1, 2, 1);
+       ('Boxing Gloves', 1, 2, 0);
 
 
 

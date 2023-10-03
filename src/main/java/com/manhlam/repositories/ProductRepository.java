@@ -8,6 +8,6 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface ProductRepository extends JpaRepository<Product,Integer> {
-    @Query("SELECT p FROM Product p JOIN FETCH p.inputStorages")
-    List<ProductDTO>  get();
+    @Query("SELECT p FROM Product as p  where p.status != false")
+    List<Product>  findAll();
 }
