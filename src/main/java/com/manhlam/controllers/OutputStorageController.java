@@ -2,18 +2,18 @@ package com.manhlam.controllers;
 
 
 import com.manhlam.dtos.OutputStorageDTO;
+import com.manhlam.dtos.OutputStorageResponseDTO;
 import com.manhlam.services.OutputStorageService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/output_storages")
+@CrossOrigin("*")
+@RequestMapping("/api/output_storages")
 public class OutputStorageController {
 
     private OutputStorageService outputStorageService;
@@ -25,5 +25,13 @@ public class OutputStorageController {
     @GetMapping("{productId}")
     public ResponseEntity<List<OutputStorageDTO>> getAllOutputStorageByProductId(@PathVariable Integer productId) {
         return new ResponseEntity<>(outputStorageService.getAllOutputStorageByProductId(productId), HttpStatus.OK);
+    }
+    @GetMapping
+    public ResponseEntity<List<OutputStorageResponseDTO>> getAllOutputStorage() {
+        return new ResponseEntity<>(outputStorageService.getAllOutputStorage(), HttpStatus.OK);
+    }
+    @PostMapping
+    public ResponseEntity<OutputStorageDTO> createOutputStorage(@RequestBody @Valid OutputStorageDTO outputStorageDTO) {
+        return new ResponseEntity<>(outputStorageService.createOutputStorage(outputStorageDTO), HttpStatus.CREATED);
     }
 }

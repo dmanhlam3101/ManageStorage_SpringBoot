@@ -1,6 +1,7 @@
 package com.manhlam.dtos;
 
 
+import com.manhlam.models.Supplier;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,6 +17,6 @@ public class StorageDTO {
     private Integer quantity ;
     private String unitName ;
 
-    private  SupplierDTO supplierDTO;
+    private Supplier supplier;
 
 }

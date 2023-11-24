@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/customer")
+@RequestMapping("/api/Customer")
 public class CustomerController {
 
     private CustomerRepository customerRepository;

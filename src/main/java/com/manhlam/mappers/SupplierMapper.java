@@ -1,10 +1,15 @@
 package com.manhlam.mappers;
 
 import com.manhlam.dtos.SupplierDTO;
+import com.manhlam.dtos.UnitDTO;
 import com.manhlam.models.Supplier;
+import com.manhlam.models.Unit;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class SupplierMapper {
-    public static SupplierDTO mapSupplierToDTO(Supplier supplier) {
+    public static SupplierDTO toDTO(Supplier supplier) {
         if (supplier == null) {
             return null;
         }
@@ -18,6 +23,9 @@ public class SupplierMapper {
         supplierDTO.setPhone(supplier.getPhone());
         supplierDTO.setStatus(supplier.getStatus());
         return supplierDTO;
+    }
+    public static List<SupplierDTO> toDtoList(List<Supplier> supplierList) {
+        return supplierList.stream().map(SupplierMapper::toDTO).collect(Collectors.toList());
     }
 
 }

@@ -1,24 +1,18 @@
 package com.manhlam.dtos;
 
-import com.manhlam.models.InputStorage;
-import com.manhlam.models.Supplier;
-import com.manhlam.models.Unit;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import java.util.Collection;
-import java.util.List;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-
-public class ProductDTO {
+public class ProductRequestDTO {
     private Integer productId;
     private String productName;
     private boolean status;
-    private Unit unit;
-    private Supplier supplier;
+    private int unitId;
+    private int supplierId;
 }

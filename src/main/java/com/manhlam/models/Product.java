@@ -1,5 +1,6 @@
 package com.manhlam.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -41,6 +42,6 @@ public class Product {
     @ManyToMany(mappedBy = "products")
     // LAZY để tránh việc truy xuất dữ liệu không cần thiết. Lúc nào cần thì mới query
     @EqualsAndHashCode.Exclude
-
+    @JsonIgnore
     private Collection<InputStorage> inputStorages;
 }

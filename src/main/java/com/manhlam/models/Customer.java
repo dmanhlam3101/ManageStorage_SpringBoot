@@ -1,5 +1,6 @@
 package com.manhlam.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import org.antlr.v4.runtime.misc.NotNull;
@@ -52,6 +53,8 @@ public class Customer {
 
 
     @ManyToMany(mappedBy = "customers")
+    @EqualsAndHashCode.Exclude
+    @JsonIgnore
     private Collection<OutputStorage> outputStorages;
 
 }
