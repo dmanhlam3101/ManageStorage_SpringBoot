@@ -16,8 +16,8 @@ public class ProductMapper {
         productDTO.setProductId(product.getProductId());
         productDTO.setProductName(product.getProductName());
         productDTO.setStatus(product.isStatus());
-        productDTO.setUnit(product.getUnitId()); // Map Unit to UnitDTO
-        productDTO.setSupplier(product.getSupplierId());
+        productDTO.setUnit(product.getUnit()); // Map Unit to UnitDTO
+        productDTO.setSupplier(product.getSupplier());
 //        List<InputStorageDTO> inputStorageDTOs = InputStorageMapper.toDtoList((List<InputStorage>) product.getInputStorages());
 //        productDTO.setInputStorages(inputStorageDTOs);
         return productDTO;
@@ -31,12 +31,12 @@ public class ProductMapper {
         if(Objects.nonNull(productDTO.getUnit())){
             Unit unitEntity = new Unit();
             unitEntity.setUnitId(Objects.requireNonNull(productDTO.getUnit().getUnitId(), "Unit ID is required!"));
-            product.setUnitId(unitEntity);
+            product.setUnit(unitEntity);
         }
         if(Objects.nonNull(productDTO.getSupplier())){
             Supplier supplierEntity = new Supplier();
             supplierEntity.setSupplierId(Objects.requireNonNull(productDTO.getSupplier().getSupplierId(), "Supllier ID is required!"));
-            product.setSupplierId(supplierEntity);
+            product.setSupplier(supplierEntity);
         }
 //        List<InputStorage> inputStorages = InputStorageMapper.toEntityList(productDTO.getInputStorages());
 //        product.setInputStorages(inputStorages);
@@ -45,11 +45,11 @@ public class ProductMapper {
     }
     public static Product toEntity(ProductRequestDTO productRequestDto, Unit unit , Supplier supplier) {
         Product product = new Product();
-        //product.setProductId(productRequestDto.getProductId());
+        product.setProductId(productRequestDto.getProductId());
         product.setProductName(productRequestDto.getProductName());
         product.setStatus(productRequestDto.isStatus());
-        product.setUnitId(unit);
-        product.setSupplierId(supplier);
+        product.setUnit(unit);
+        product.setSupplier(supplier);
 
         return product;
     }

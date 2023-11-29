@@ -20,4 +20,5 @@ public class UnitMapper {
     public static List<UnitDTO> toDtoList(List<Unit> unitList) {
         return unitList.stream().map(UnitMapper::mapUnitToDTO).collect(Collectors.toList());
     }
+
 }

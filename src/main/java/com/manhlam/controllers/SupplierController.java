@@ -14,7 +14,7 @@ import java.util.List;
 
 @Controller
 @CrossOrigin("*")
-@RequestMapping("api/Supplier")
+@RequestMapping("api/supplier")
 public class SupplierController {
 
     private SupplierService supplierService;

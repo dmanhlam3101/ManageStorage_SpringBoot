@@ -14,7 +14,7 @@ public class InputStorageMapper {
 
     public static InputStorageDTO toDto(InputStorage inputStorage) {
         InputStorageDTO inputStorageDTO = new InputStorageDTO();
-        inputStorageDTO.setInputId(inputStorage.getInputId());
+        //inputStorageDTO.setInputId(inputStorage.getInputId());
         Set<Integer> productIds = inputStorage.getProducts().stream()
                 .map(Product::getProductId)
                 .collect(Collectors.toSet());
@@ -35,8 +35,8 @@ public class InputStorageMapper {
                         product.getProductId(),
                         product.getProductName(),
                         product.isStatus(),
-                        product.getUnitId(),
-                        product.getSupplierId()
+                        product.getUnit(),
+                        product.getSupplier()
 
                 ))
                 .collect(Collectors.toSet());

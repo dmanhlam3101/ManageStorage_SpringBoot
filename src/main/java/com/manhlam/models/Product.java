@@ -30,11 +30,11 @@ public class Product {
 
     @ManyToOne
     @JoinColumn(name = "unit")
-    private Unit unitId;
+    private Unit unit;
 
     @ManyToOne
     @JoinColumn(name = "supplier")
-    private  Supplier supplierId;
+    private  Supplier supplier;
 
     @Column(name = "status")
     private   boolean status;

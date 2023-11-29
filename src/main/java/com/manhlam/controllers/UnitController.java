@@ -15,7 +15,7 @@ import java.util.List;
 
 @Controller
 @CrossOrigin("*")
-@RequestMapping("/api/Unit")
+@RequestMapping("/api/unit")
 public class UnitController {
     private UnitService unitService;
 

@@ -14,7 +14,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin("*")
-@RequestMapping("/api/Storage")
+@RequestMapping("/api/storage")
 public class StorageController {
 
     private StorageService storageService;

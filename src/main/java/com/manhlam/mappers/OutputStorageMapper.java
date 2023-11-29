@@ -27,8 +27,8 @@ public class OutputStorageMapper {
                         product.getProductId(),
                         product.getProductName(),
                         product.isStatus(),
-                        product.getUnitId(),
-                        product.getSupplierId()
+                        product.getUnit(),
+                        product.getSupplier()
 
                 ))
                 .collect(Collectors.toSet());
